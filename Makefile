@@ -23,4 +23,4 @@ fclean:	clean
 	$(RM) *.gcda
 	$(RM) *.gcno
 
-re:	del_name all
+re:	fclean all
