@@ -1,6 +1,6 @@
 #include "../lib/header.h"
 
-game_t *init_struct(void)
+game_t	*initStruct(void)
 {
 	game_t *game;
 
@@ -12,17 +12,26 @@ game_t *init_struct(void)
 	return (game);
 }
 
-int coreLogic(void)
+int	initGame(game_t *game)
 {
 	char	*nameFile;
-	game_t	*game;
+	int		return_value;
 
-	game = init_struct();
-	if (game == NULL)
-		return (-1);
 	game->file = findNameFile();
 	if (game->file == NULL)
 		return (error("Error with file\n"));
 	game->word = findWord(game);
-	return (0);
+	return_value = core(game);
+	//clear game
+	return (return_value);
+}
+
+int	firstGame(void)
+{
+	game_t *game;
+
+	game = initStruct();
+	if (game == NULL)
+		return (error("Error with struct game_t\n"));
+	return (initGame(game));
 }

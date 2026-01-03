@@ -2,12 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *findWord(game_t *game) //trouver le neme mot
+char	*cleanWord(game_t *game)
 {
-	int	r;
-	int	line;
+	return (NULL);
+}
+
+char	*findWord(game_t *game) //trouver le neme mot
+{
+	int		r;
+	int		line;
 	char	*word;
-	size_t size;
+	size_t	size;
 
 	size = 0;
 	word = NULL;

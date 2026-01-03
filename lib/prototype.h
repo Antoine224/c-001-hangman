@@ -4,14 +4,16 @@
 #include <stdio.h>
 #include "struct.h"
 // cerveau, init la partie
-int		coreLogic(void);
+int		core(game_t *game);
+
 
 char	*requestFileName(void);
 FILE	*findNameFile(void);
 char	*findWord(game_t *game);
-
+int		initGame(game_t *game);
+int		firstGame(void);
 // error
-int	error(char *str);
+int		error(char *str);
 
 // lib
 void	ft_putstr(char *str);
