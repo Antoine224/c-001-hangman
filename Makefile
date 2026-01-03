@@ -5,7 +5,7 @@ SRCS	=	$(shell find . -name "*.c")
 
 OBJS	=	$(SRCS:.c=.o)
 
-FLAGS	=	-Wall -Wextra -Werror -g
+FLAGS	=	-Wall -Wextra -g
 
 all:	$(NAME)
 
