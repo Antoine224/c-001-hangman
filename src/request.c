@@ -1,6 +1,6 @@
 #include "../lib/header.h"
 
-char	*requestFileName()
+char	*requestFileName(void)
 {
 	char	*nameFile;
 
@@ -9,5 +9,5 @@ char	*requestFileName()
 		return (NULL);
 	ft_putstr("Quel fichier voulez-vous utiliser ?\n");
 	scanf("%s", nameFile);
-	printf("%s\n", nameFile);
+	return (nameFile);
 }
