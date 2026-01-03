@@ -2,12 +2,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*cleanWord(game_t *game)
+char	*cleanWord(char	*word)
 {
-	return (NULL);
+	char	*clean_word;
+
+	if (word == NULL)
+		return (NULL);
+	clean_word = malloc((ft_strlen(word) + 55) * sizeof(char));
+	if (clean_word == NULL)
+		return (NULL);
+	clean_word = ft_strncpy(clean_word, word, ft_strlen(word));
+	if (clean_word == NULL)
+		return (NULL);
+	return (clean_word);
 }
 
-char	*findWord(game_t *game) //trouver le neme mot
+char	*findWord(game_t *game)
 {
 	int		r;
 	int		line;
@@ -29,5 +39,5 @@ char	*findWord(game_t *game) //trouver le neme mot
 		getline(&word, &size, game->file);
 		line++;
 	}
-	return (word);
+	return (cleanWord(word));
 }
