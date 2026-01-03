@@ -18,4 +18,5 @@ int		error(char *str);
 // lib
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
+size_t	ft_strlen(char *str);
 #endif
