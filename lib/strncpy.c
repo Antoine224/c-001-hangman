@@ -1,6 +1,6 @@
 #include "header.h"
 
-char	*strncpy(char *dst, const char *src, size_t size)
+char	*ft_strncpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 

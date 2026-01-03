@@ -19,5 +19,5 @@ int		error(char *str);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 size_t	ft_strlen(char *str);
-char	*strncpy(char *dst, const char *src, size_t size);
+char	*ft_strncpy(char *dst, const char *src, size_t size);
 #endif
