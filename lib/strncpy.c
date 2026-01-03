@@ -10,12 +10,13 @@ char	*ft_strncpy(char *dst, const char *src, size_t size)
 	while (i != size)
 	{
 		if (src[i] == '\0')
-			{
-				dst[i] = '\0';
-				return (dst);
-			}
+		{
+			dst[i] = '\0';
+			return (dst);
+		}
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i - 1] = '\0';
 	return (dst);
 }
