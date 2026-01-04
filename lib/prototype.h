@@ -7,11 +7,13 @@
 // cerveau, init la partie
 int		core(game_t *game);
 
-char	*requestFileName(void);
 FILE	*findNameFile(void);
 char	*findWord(game_t *game);
 int		initGame(game_t *game);
 int		firstGame(void);
+
+// setup game
+int		loop(game_t *game);
 
 // error
 int		error(char *str);
@@ -19,6 +21,8 @@ int		error(char *str);
 // script
 //		french
 void	firstScrpit(void);
+void	invalidChoice(int choice);
+void	clear(void);
 
 // lib
 void	ft_putstr(char *str);

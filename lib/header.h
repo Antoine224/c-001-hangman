@@ -12,5 +12,6 @@
 #include <fcntl.h> //read open file
 #include <stdlib.h>
 #include <time.h> //pour nombre aleatoire (en fct date)
+#include <unistd.h>
 
 #endif

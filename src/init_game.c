@@ -21,7 +21,7 @@ int	initGame(game_t *game)
 	if (game->file == NULL)
 		return (error("Error with file\n"));
 	game->word = findWord(game);
-	return_value = core(game);
+	return_value = loop(game);
 	//clear game
 	return (return_value);
 }
