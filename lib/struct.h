@@ -9,7 +9,8 @@ typedef struct game {
 	char	*letter;
 	int		nb_attempts; //8 max
 	bool	alive;
-	FILE	*file;
+	FILE	*file; //penser a close le file
+	char	*path; //a changer si uniquement l'user demande a le changer
 } game_t;
 
 #endif
