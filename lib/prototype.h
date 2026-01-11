@@ -30,5 +30,7 @@ void	ft_putchar(char c);
 size_t	ft_strlen(char *str);
 char	*ft_strncpy(char *dst, const char *src, size_t size);
 char	*ft_strdup(char *str);
+int		ft_isdigit(int c);
+int		ft_atoi(const char	*str);
 
 #endif
