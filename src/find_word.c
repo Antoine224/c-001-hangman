@@ -48,8 +48,6 @@ char	*myWord(game_t *game)
 	size = ft_strlen(game->word);
 	if (game->word == NULL)
 		return (NULL);
-	if (game->my_word != NULL)
-		free(game->my_word);
 	my_word = malloc((size + 1) * sizeof(char));
 	if (my_word == NULL)
 		return (NULL);
@@ -57,6 +55,6 @@ char	*myWord(game_t *game)
 	{
 		my_word[i] = '_';
 	}
-	my_word[size + 1] = '\0';
+	my_word[size] = '\0';
 	return (my_word);
 }
