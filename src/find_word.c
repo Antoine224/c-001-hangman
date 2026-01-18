@@ -1,6 +1,4 @@
 #include "../lib/header.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*cleanWord(char	*word)
 {
@@ -28,7 +26,7 @@ char	*findWord(game_t *game)
 	word = NULL;
 	line = 1;
 	srand(time(NULL));
-	r = rand() % 399;
+	r = rand() % 399; //Mettre le nombre de ligne
 	while (r == 0)
 	{
 		srand(time(NULL));
@@ -40,4 +38,25 @@ char	*findWord(game_t *game)
 		line++;
 	}
 	return (cleanWord(word));
+}
+
+char	*myWord(game_t *game)
+{
+	char	*my_word;
+	int		size;
+
+	size = ft_strlen(game->word);
+	if (game->word == NULL)
+		return (NULL);
+	if (game->my_word != NULL)
+		free(game->my_word);
+	my_word = malloc((size + 1) * sizeof(char));
+	if (my_word == NULL)
+		return (NULL);
+	for (int i = 0; i != size; i++)
+	{
+		my_word[i] = '_';
+	}
+	my_word[size + 1] = '\0';
+	return (my_word);
 }
