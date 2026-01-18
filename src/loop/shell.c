@@ -30,7 +30,7 @@ int	loop(game_t *game)
 			break;
 	}
 	if (choice == 1)
-		return (0);
+		startGame(game);
 	if (choice == 2)
 		return (0);
 	if (choice == 3)
