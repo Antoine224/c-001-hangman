@@ -5,12 +5,14 @@
 #include "struct.h"
 
 // cerveau, init la partie
-int		core(game_t *game);
+// int		core(game_t *game);
 
 FILE	*findNameFile(void);
 char	*findWord(game_t *game);
 int		initGame(game_t *game);
 int		firstGame(void);
+int		startGame(game_t *game);
+char	*myWord(game_t *game);
 
 // setup game
 int		loop(game_t *game);
@@ -23,6 +25,8 @@ int		error(char *str);
 void	firstScrpit(void);
 void	invalidChoice(int choice);
 void	clear(void);
+void	tutoFrench(void);
+void	gamePage(void);
 
 // lib
 void	ft_putstr(char *str);

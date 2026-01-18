@@ -6,6 +6,7 @@
 
 typedef struct game {
 	char	*word;
+	char	*my_word;
 	char	*letter;
 	int		nb_attempts; //8 max
 	bool	alive;
