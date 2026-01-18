@@ -23,6 +23,17 @@ void	firstScrpit(void)
 	ft_putstr("\n[3]  Exit\n\n");
 }
 
+void	tutoFrench(void)
+{
+	ft_putstr("Tutoriel\n========================================================================");
+	//explanation of rules
+}
+
+void	gamePage(void)
+{
+	ft_putstr("Pendu\n========================================================================");
+}
+
 /*
 Contents
 ========================================================================
