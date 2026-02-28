@@ -31,7 +31,15 @@ void	tutoFrench(void)
 
 void	gamePage(void)
 {
-	ft_putstr("Pendu\n========================================================================");
+	ft_putstr("========================================================================\n");
+	ft_putstr("[1]  Hangman\n");
+	ft_putstr("========================================================================\n\n");
+}
+
+void	printGame(game_t *game)
+{
+	ft_putstr(game->my_word);
+	ft_putstr("\n\n\n");
 }
 
 /*
