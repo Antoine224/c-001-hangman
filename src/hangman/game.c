@@ -42,7 +42,6 @@ int	letterAlreadyUse(char *str, char c) //si existe dans str, return la position
 
 void	letterToWord(game_t *game, char c)
 {
-	printf("HERE\n");
 	if (letterAlreadyUse(game->word, c) != -1)
 	{
 		//ici la lettre existe
