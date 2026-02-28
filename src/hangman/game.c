@@ -30,6 +30,8 @@ char	reelLetter(char *str)
 
 int	letterAlreadyUse(char *str, char c) //si existe dans str, return la position
 {
+	if (str == NULL)
+		return (84); //Attention si str == NULL, return 84///// pour letter au debut
 	for (int i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == c)
@@ -40,28 +42,43 @@ int	letterAlreadyUse(char *str, char c) //si existe dans str, return la position
 
 void	letterToWord(game_t *game, char c)
 {
-	if (letterAlreadyUse(game->word, c) != 0);
+	printf("HERE\n");
+	if (letterAlreadyUse(game->word, c) != -1)
+	{
+		//ici la lettre existe
+		for (int i = 0; game->word[i] != '\0'; i++)
+		{
+			if (game->word[i] == c)
+			{
+				game->my_word[i] = c;
+			}
+		}
+	} else {
+		//ici la lettre n'existe pas
+		printf("NO LETTER\n");
+	}
 }
 
 /*
 [X] Check si letter est bon
 [?] Check si letter est deja utilise
-[ ] Check si letter existe dans le mot
-[ ] Afficher TOUTES les lettres dans le mot
+[X] Check si letter existe dans le mot
+[X] Afficher TOUTES les lettres dans le mot
 */
 void	addLetter(game_t *game, char *str)
 {
 	char	c;
 
+	printf("Word: %s\n", game->word);
 	if (str[2] != '\0' && str[1] != '\n' && str[0] != '\n') //check 1 entree possible (str[0])
 		return;
 	if (str[0] < 65 || str[0] > 90 && str[0] < 97 || str[0] > 122) //check que str[0] == lettre de l'alphanet
 		return;
 	c = reelLetter(str);
-	if (letterAlreadyUse(game->letter, c) != -1) //lettre deja utilise, deja mis par le passe
+	if (letterAlreadyUse(game->letter, c) == -1) //lettre deja utilise, deja mis par le passe // crash au debut, letter == NULL a regler
 		return;
-	if (letterAlreadyUse(game->my_word, c) != -1)
-		return;
+	// if (letterAlreadyUse(game->my_word, c) == -1)
+	// 	exit(0);
 	letterToWord(game, c);
 	return;
 }
