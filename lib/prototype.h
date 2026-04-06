@@ -38,5 +38,6 @@ char	*ft_strdup(char *str);
 int		ft_isdigit(int c);
 int		ft_atoi(const char	*str);
 void	ft_putnbr(int nb);
+int		ft_strcmp(char *str1, char *str2);
 
 #endif
