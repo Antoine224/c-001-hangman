@@ -64,6 +64,7 @@ void	letterToWord(game_t *game, char c)
 [?] Check si letter est deja utilise
 [X] Check si letter existe dans le mot
 [X] Afficher TOUTES les lettres dans le mot
+Probleme avec les mots qui ont des espaces (+ caractères non alphanumériques)
 */
 void	addLetter(game_t *game, char *str)
 {
@@ -97,12 +98,15 @@ int	core(game_t *game)
 {
 	char	*str;
 
-	clear();
-	gamePage();
 	while (game->alive)
 	{
+		clear();
+		gamePage();
+		// printf("%s\n", game->word);
 		if (game->nb_attempts >= 8)
 			game->alive = 0;
+		if (ft_strcmp(game->my_word, game->word) == 0) //gagner
+			exit(45); //trouver un autre mot
 		printGame(game);
 		str = readInput();
 		if (checkCmd(game, str) == 1) //if error
