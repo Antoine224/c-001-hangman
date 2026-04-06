@@ -54,7 +54,8 @@ void	letterToWord(game_t *game, char c)
 		}
 	} else {
 		//ici la lettre n'existe pas
-		printf("NO LETTER\n");
+		// printf("NO LETTER\n");
+		game->nb_attempts++;
 	}
 }
 

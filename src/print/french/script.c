@@ -38,6 +38,9 @@ void	gamePage(void)
 
 void	printGame(game_t *game)
 {
+	ft_putstr("nombre de tentative :");
+	ft_putnbr(game->nb_attempts);
+	ft_putstr("\n\n");
 	ft_putstr(game->my_word);
 	ft_putstr("\n\n\n");
 }
