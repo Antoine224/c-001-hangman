@@ -12,27 +12,27 @@ game_t	*initStruct(void)
 	return (game);
 }
 
-int	initGame(game_t *game)
+int	init_game(game_t *game)
 {
 	char	*nameFile;
 	int		return_value;
 
-	game->file = findNameFile();
+	game->file = find_name_file();
 	if (game->file == NULL)
 		return (error("Error with file\n"));
-	game->word = findWord(game);
+	game->word = find_word(game);
 	game->my_word = myWord(game);
 	return_value = loop(game);
 	//clear game
 	return (return_value);
 }
 
-int	firstGame(void)
+int	first_game(void)
 {
 	game_t *game;
 
 	game = initStruct();
 	if (game == NULL)
 		return (error("Error with struct game_t\n"));
-	return (initGame(game));
+	return (init_game(game));
 }

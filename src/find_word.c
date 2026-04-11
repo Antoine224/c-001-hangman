@@ -1,6 +1,6 @@
 #include "../lib/header.h"
 
-char	*cleanWord(char	*word)
+char	*clean_word(char	*word)
 {
 	char	*clean_word;
 
@@ -15,7 +15,7 @@ char	*cleanWord(char	*word)
 	return (clean_word);
 }
 
-char	*findWord(game_t *game)
+char	*find_word(game_t *game)
 {
 	int		r;
 	int		line;
@@ -37,7 +37,7 @@ char	*findWord(game_t *game)
 		getline(&word, &size, game->file);
 		line++;
 	}
-	return (cleanWord(word));
+	return (clean_word(word));
 }
 
 char	*myWord(game_t *game)

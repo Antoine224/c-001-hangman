@@ -14,7 +14,7 @@ void	invalidChoice(int choice)
 	printf("%d\n", choice);
 }
 
-void	firstScrpit(void)
+void	first_script(void)
 {
 	//clear shell here
 	ft_putstr("Contents\n========================================================================");
@@ -29,14 +29,14 @@ void	tutoFrench(void)
 	//explanation of rules
 }
 
-void	gamePage(void)
+void	game_page(void)
 {
 	ft_putstr("========================================================================\n");
 	ft_putstr("[1]  Hangman\n");
 	ft_putstr("========================================================================\n\n");
 }
 
-void	printGame(game_t *game)
+void	print_game(game_t *game)
 {
 	ft_putstr("nombre de tentative :");
 	ft_putnbr(game->nb_attempts);

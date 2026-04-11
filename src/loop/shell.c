@@ -1,6 +1,6 @@
 #include "../../lib/header.h"
 
-int	getNbr(void)
+int	get_nbr(void)
 {
 	char	buffer[80];
 	int		choice;
@@ -24,8 +24,8 @@ int	loop(game_t *game)
 	while (1)
 	{
 		clear();
-		firstScrpit();
-		choice = getNbr();
+		first_script();
+		choice = get_nbr();
 		if (choice > 0 && choice < 4)
 			break;
 	}

@@ -2,5 +2,5 @@
 
 int main(void)
 {
-	return (firstGame());
+	return (first_game());
 }

@@ -1,6 +1,6 @@
 #include "../lib/header.h"
 
-FILE *findNameFile(void)
+FILE *find_name_file(void)
 {
 	FILE	*file;
 	

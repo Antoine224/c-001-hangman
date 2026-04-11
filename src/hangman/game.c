@@ -1,11 +1,11 @@
 #include "../../lib/header.h"
 
-void	printStruct(game_t *game)
+void	print_struct(game_t *game)
 {
 	printf("\n\nStruct:\nWord: %s\nmy_word: %s\nletter: %s\nnb_attempts: %d\nalive: %d\nFILE: %p\npath: %s\n", game->word, game->my_word, game->letter, game->nb_attempts, game->alive, game->file, game->path);
 }
 
-char	*readInput(void)
+char	*read_input(void)
 {
 	char	*buffer;
 	size_t	size;
@@ -17,7 +17,7 @@ char	*readInput(void)
 	return (buffer);
 }
 
-char	reelLetter(char *str)
+char	reel_letter(char *str)
 {
 	char	c;
 
@@ -28,7 +28,7 @@ char	reelLetter(char *str)
 	return (c);
 }
 
-int	letterAlreadyUse(char *str, char c) //si existe dans str, return la position
+int	letter_already_use(char *str, char c) //si existe dans str, return la position
 {
 	if (str == NULL)
 		return (84); //Attention si str == NULL, return 84///// pour letter au debut
@@ -40,9 +40,9 @@ int	letterAlreadyUse(char *str, char c) //si existe dans str, return la position
 	return (-1); //n'existe pas dans str
 }
 
-void	letterToWord(game_t *game, char c)
+void	letter_to_word(game_t *game, char c)
 {
-	if (letterAlreadyUse(game->word, c) != -1)
+	if (letter_already_use(game->word, c) != -1)
 	{
 		//ici la lettre existe
 		for (int i = 0; game->word[i] != '\0'; i++)
@@ -66,7 +66,7 @@ void	letterToWord(game_t *game, char c)
 [X] Afficher TOUTES les lettres dans le mot
 Probleme avec les mots qui ont des espaces (+ caractères non alphanumériques)
 */
-void	addLetter(game_t *game, char *str)
+void	add_letter(game_t *game, char *str)
 {
 	char	c;
 
@@ -75,22 +75,22 @@ void	addLetter(game_t *game, char *str)
 		return;
 	if (str[0] < 65 || str[0] > 90 && str[0] < 97 || str[0] > 122) //check que str[0] == lettre de l'alphanet
 		return;
-	c = reelLetter(str);
-	if (letterAlreadyUse(game->letter, c) == -1) //lettre deja utilise, deja mis par le passe // crash au debut, letter == NULL a regler
+	c = reel_letter(str);
+	if (letter_already_use(game->letter, c) == -1) //lettre deja utilise, deja mis par le passe // crash au debut, letter == NULL a regler
 		return;
 	// if (letterAlreadyUse(game->my_word, c) == -1)
 	// 	exit(0);
-	letterToWord(game, c);
+	letter_to_word(game, c);
 	return;
 }
 
-int	checkCmd(game_t *game, char *str)
+int	check_cmd(game_t *game, char *str)
 {
 	if (str == NULL || game->my_word == NULL || game->word == NULL)
 		return (1);
 	if (strncmp(str, "exit", 4) == 0)
 		return (1);
-	addLetter(game, str);
+	add_letter(game, str);
 	return (0);
 }
 
@@ -101,15 +101,15 @@ int	core(game_t *game)
 	while (game->alive)
 	{
 		clear();
-		gamePage();
+		game_page();
 		// printf("%s\n", game->word);
 		if (game->nb_attempts >= 8)
 			game->alive = 0;
 		if (ft_strcmp(game->my_word, game->word) == 0) //gagner
 			exit(45); //trouver un autre mot
-		printGame(game);
-		str = readInput();
-		if (checkCmd(game, str) == 1) //if error
+		print_game(game);
+		str = read_input();
+		if (check_cmd(game, str) == 1) //if error
 			return (0);
 	}
 	//check game, voir ce qui existe ou non, initier ce qui n'existe pas 
