@@ -40,7 +40,7 @@ char	*find_word(game_t *game)
 	return (clean_word(word));
 }
 
-char	*myWord(game_t *game)
+char	*my_word(game_t *game)
 {
 	char	*my_word;
 	int		size;

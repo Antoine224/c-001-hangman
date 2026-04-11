@@ -12,7 +12,7 @@ char	*find_word(game_t *game);
 int		init_game(game_t *game);
 int		first_game(void);
 int		core(game_t *game);
-char	*myWord(game_t *game);
+char	*my_word(game_t *game);
 
 // setup game
 int		loop(game_t *game);
@@ -23,9 +23,9 @@ int		error(char *str);
 // script
 //		french
 void	first_script(void);
-void	invalidChoice(int choice);
+void	invalid_choice(int choice);
 void	clear(void);
-void	tutoFrench(void);
+void	tuto_french(void);
 void	game_page(void);
 void	print_game(game_t *game);
 

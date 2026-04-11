@@ -1,6 +1,6 @@
 #include "../lib/header.h"
 
-game_t	*initStruct(void)
+game_t	*init_struct(void)
 {
 	game_t *game;
 
@@ -21,7 +21,7 @@ int	init_game(game_t *game)
 	if (game->file == NULL)
 		return (error("Error with file\n"));
 	game->word = find_word(game);
-	game->my_word = myWord(game);
+	game->my_word = my_word(game);
 	return_value = loop(game);
 	//clear game
 	return (return_value);
@@ -31,7 +31,7 @@ int	first_game(void)
 {
 	game_t *game;
 
-	game = initStruct();
+	game = init_struct();
 	if (game == NULL)
 		return (error("Error with struct game_t\n"));
 	return (init_game(game));

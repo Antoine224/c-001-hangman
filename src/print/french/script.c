@@ -8,7 +8,7 @@ void	clear(void)
 	write(1, CLEAR_SCREEN_ANSI, 11);
 }
 
-void	invalidChoice(int choice)
+void	invalid_choice(int choice)
 {
 	ft_putstr("Invalid number: ");
 	printf("%d\n", choice);
@@ -23,7 +23,7 @@ void	first_script(void)
 	ft_putstr("\n[3]  Exit\n\n");
 }
 
-void	tutoFrench(void)
+void	tuto_french(void)
 {
 	ft_putstr("Tutoriel\n========================================================================");
 	//explanation of rules
